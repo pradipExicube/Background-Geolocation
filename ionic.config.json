@@ -1,5 +1,7 @@
 {
   "name": "backgroungGeolocation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

@@ -6,6 +6,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { BackgroundGeolocation} from '@ionic-native/background-geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
+import { CustomService } from './customservice';
+import { BackgroundMode } from '@ionic-native/background-mode';
+
+import * as firebase from 'firebase';
+export const firebaseConfig = {
+  apiKey: "AIzaSyBAeIzZ5HIgf7FP2OJO68St3qaZB3n5uP8",
+  authDomain: "semaconstruction-ba875.firebaseapp.com",
+  databaseURL: "https://semaconstruction-ba875.firebaseio.com",
+  projectId: "semaconstruction-ba875",
+  storageBucket: "semaconstruction-ba875.appspot.com",
+  messagingSenderId: "22762760538",
+  appId: "1:22762760538:web:718e12bbd961e078256b63",
+};
+firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -23,7 +39,7 @@ import { HomePage } from '../pages/home/home';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,BackgroundGeolocation,Geolocation,CustomService,BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
